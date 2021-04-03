@@ -7,6 +7,8 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# reticulate me permite utilizar python
 reticulate::use_python("/Users/juangabriel/anaconda3/bin/python3")
 ```
 

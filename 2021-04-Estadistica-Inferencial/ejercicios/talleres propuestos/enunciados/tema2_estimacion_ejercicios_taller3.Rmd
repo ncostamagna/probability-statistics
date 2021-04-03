@@ -1,0 +1,56 @@
+---
+title: "Ejercicios Tema 2 - Estimación. Taller 3"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso completo de estadística inferencial con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+toccolor: blue
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(scipen=999)
+```
+
+
+# Estimación taller 3
+
+## Ejercicio 1
+Supongamos  que $X_1,X_2,\ldots,X_6$ es una muestra aleatoria de una
+variable aleatoria normal con media  $\mu$ y  varianza $\sigma^2$.
+ Hallar  la constante $C$ tal que $$C\cdot\bigl({(X_1 -X_2)}^2 +{(X_3 -X_4)}^2 + 
+ {(X_5 -X_6)}^2\bigr),$$ sea  un estimador sin sesgo de $\sigma^2$.
+
+## Ejercicio 2
+Supongamos  que $\Theta_1$ y  $\Theta_2$ son estimadores sin sesgo
+de un parámetro desconocido $\theta$, con varianzas conocidas $\sigma_1^2$ y
+$\sigma_2^2$, respectivamente. Demostrar  que $\Theta =(1-a)\cdot\Theta_1 +a\cdot \Theta_2$ también es insesgado para cualquier valor de $a\not=0$.
+
+## Ejercicio 3
+Sea $X_1,\ldots,X_{2n}$ una muestra aleatoria simple de una variable
+aleatoria $N(\mu,\sigma)$. Sea:
+\[
+T=C\left({\left(\sum_{i=1}^{2n} X_i\right)}^2- 4 n\sum_{i=1}^{n}
+X_{2i} X_{2i-1}\right)
+\]
+un estimador del parámetro $\sigma^2$. ¿Cuál es el valor de $C$ para que 
+$T$ sea un estimador insesgado?
+
+## Ejercicio 4
+Una variable aleatoria $X$ sigue la  distribución de 
+Rayleigh con parámetro $\theta >0$ si es una variable 
+aleatoria con valores $x>0$ y  función  de densidad:
+$$
+f(x)=\frac{x}{\theta} e^{-\frac{x^2}{2\theta}}.
+$$
+ Hallar el estimador máximo verosímil del parámetro $\theta$.
+

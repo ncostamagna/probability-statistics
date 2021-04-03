@@ -1,0 +1,70 @@
+---
+title: "Ejercicios Tema 2 - Estimación. Taller 2"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: "Curso completo de estadística inferencial con R y Python"
+output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+toccolor: blue
+linkcolor: red
+header-includes: \renewcommand{\contentsname}{Contenidos}
+citecolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Estimación taller 2
+
+## Ejercicio 1
+Supongamos que la cantidad de  lluvia  registrada en una cierta estación meteorológica  en
+un día determinado está distribuida uniformemente en el intervalo $(0,b)$. Nos 
+dan la siguiente muestra de los registros de los últimos 10 años  en ese día: 
+$$0,0,0.7,1,0.1,0,0.2,0.5,0,0.6$$
+
+> Estimar el parámetro $b$ a partir de su estimador $\tilde b$.
+
+
+## Ejercicio 2
+Supongamos que el grado de crecimiento  de unos pinos jóvenes en metros de altura
+en un año es una variable aleatoria normal con media y varianza
+desconocidas. Se registran los crecimientos de 5 árboles y  los 
+resultados son: $0.9144,1.524,0.6096,0.4572$ y  $1.0668$ metros. 
+Calcular los valores estimados de $\mu$ y  $\sigma^2$ para esta muestra.
+
+## Ejercicio 3
+$X$ es una variable geométrica  con parámetro $p$. Dada una muestra
+aleatoria de $n$ observaciones de $X$, cuál es el estimador de $p$ por  método de los  momentos?
+
+## Ejercicio 4
+Se supone  que el número de horas que funciona una bombilla LED es una
+variable exponencial con parámetro $\lambda$. Dada una muestra de $n$ duraciones, calcular el estimador por método de los momentos para $\lambda$.
+
+## Ejercicio 5
+Si se supone  que $X$ esta distribuida uniformemente en el intervalo
+$(b-\frac14,b+5)$, ¿cuál es el estimador por método de los momentos
+para a $b$ en base a una muestra aleatoria de $n$ observaciones?
+
+
+## Ejercicio 6
+Supongamos  que $X$ es una variable aleatoria de Poisson con parámetro $\lambda$. 
+Dada una muestra aleatoria de $n$ observaciones de $X$, cuál es el estimador de máxima  verosimilitud para  a $\lambda$?
+
+## Ejercicio 7
+¿Cuál es el estimador de máxima  verosimilitud para  al parámetro
+$\lambda$ de una variable exponencial para  a una muestra de 
+tamaño $n$?
+
+## Ejercicio 8
+Se registran los  tiempos de duración de 30 bombillas.
+ Supongamos  que el tiempo de duración de estas bombillas es una variable exponencial. Si
+la suma de los tiempos $\sum x_i =32916$ horas, ¿cuál  es el estimador de máxima 
+verosimilitud para al parámetro de la distribución exponencial de duración de les
+bombillas?

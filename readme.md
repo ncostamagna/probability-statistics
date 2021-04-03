@@ -1,3 +1,9 @@
-# Estadistica
+# Indice
 
-# Probabilidad
+# Estadistica Basica
+
+# Estadistica Inferencial 
+
+# Estadistica Multivariante
+
+# Probabilidad Basica

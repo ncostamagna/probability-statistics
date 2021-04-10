@@ -1,4 +1,3 @@
-# Indice
 - [Estadistica Basica](#estadistica-basica)
   * [Muestra](#muestra)
   * [Variable Aleatoria](#variable-aleatoria)
@@ -11,6 +10,11 @@
     + [Moda](#moda)
   * [Medidas de Dispercion](#medidas-de-dispercion)
 - [Estadistica Inferencial](#estadistica-inferencial)
+  * [Muestreo](#muestreo)
+    + [Muestreo Aleatorio](#muestreo-aleatorio)
+      - [Muestra Aleatoria con reposicion](#muestra-aleatoria-con-reposicion)
+      - [Muestra Aleatoria sin reposicion](#muestra-aleatoria-sin-reposicion)
+    + [Muestreo Sistematico](#muestreo-sistematico)
 - [Estadistica Multivariante](#estadistica-multivariante)
 - [Probabilidad Basica](#probabilidad-basica)
 
@@ -65,7 +69,77 @@ Valor que mas se repite
 ## Medidas de Dispercion
 
 # Estadistica Inferencial 
+Mediante una muestra quiero poder llegar a describir lo mas certeramente posible la poblacion total.<br /><br />
+Pasos para un estudio Inferencial:
+- Establecer la caracteristica que se desea estimar o la hipotesis que se desea constatar
+- Determinar que informacion nos hace falta para hacerlo
+- Se diseña un experimento que permita recoger estos datos, este paso incluye
+  * Decidir que tipo de muestra se va a tomar y su tamaño
+  * Elegir las tecnicas adecuadas para realizar las inferencias deseadas a partir de la muestra que se tomara
+- Tomamos esa muestra y medimos los datos deseados sobre los individuos que la forman
+- Aplicar las tecnicas de inferencia elegidascon el software adecuado (Python o R)
+- Obtener conclusiones
+- Si las conclusiones son fiables y suficientes, redactar un informe; en caso contrario, volver a empezar.
 
+## Muestreo
+Tendremos que distinguir entre **Poblacion** y **muestra** (subconjunto de la poblacion)<br />
+Dos tipos de analisis estadisticos:
+- **Exploratorio** o **Descriptivo**: **Estadistica Descriptiva**
+  * desribimos lo que viene de la muestra
+- **Inferencial** o **confirmatorio**: **Estadistica Inferencial**
+  * mediante una muestra quiero poder llegar a describir la poblacion
+<br /><br />
+
+### Muestreo Aleatorio
+Consiste en seleccionar una muestra de la poblacion de manera que todas las muestras del mismo tamaño sean equiprobables (El tipico caso de las bolas)<br />
+
+#### Muestra Aleatoria con reposicion
+<img src="images/1.png" /><br />
+Las bolas pueden salir mas de una vez
+
+```r
+sample(1:100, 15, replace=TRUE) # Elegimos 15 al azar
+```
+
+```r
+head(iris)
+
+set.seed(4) # seteamos una semilla para que los valores aleatorios sean siempre iguales
+
+flores.elegidas = sample(1:150,10, replace= TRUE) #Elegimos 10
+muestra.iris = iris[flores.elegidas,]
+```
+
+#### Muestra Aleatoria sin reposicion
+<img src="images/2.png" /><br />
+No puede salir una bola 2 veces
+
+```r
+sample(1:100, 15, replace=FALSE) # Elegimos 15 al azar sin repetir
+```
+Se puede considerar que con reposicion y sin reposicion son equivalentes si el tamaño de la poblacion es muy grande en relacion a la muestra (al menos una 1000 veces mayor)
+
+### Muestreo Sistematico
+Suponiendo que los individuos de una poblacion vienen de una lista ordenada, se toman en intervalos constantes escogiendo al azar el primer individuo<br />
+En este caso elegimos uno al azar (el 92) y vamos contando de intervalos (en este caso 7)<br />
+<img src="images/3.png" /><br />
+
+```r
+primer.valor = sample(1:150,1) # Elegir el primer valor
+incremento = floor(150/10) # de las 150 quiero elegir 10
+
+# long total de 10 elementos
+# pero de esta manera puede pasa los 150
+# si eligo como primera 130 van: 130, 140, 150, 160, 170,...
+elegidas = seq(from=primer.valor, by=incremento, length.out=10) 
+
+# para esto lo que hacemos es aplicar el modulo que me devuelve el resto
+# si es 160 me daria 10
+elegidas = elegidas%%150
+
+muestra = iris[elegidas,]
+
+```
 # Estadistica Multivariante
 
 # Probabilidad Basica

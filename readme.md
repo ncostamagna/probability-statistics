@@ -1,4 +1,4 @@
-- [Estadistica Basica](#estadistica-basica)
+- [Estadistica Descriptiva](#estadistica-descriptiva)
   * [Muestra](#muestra)
   * [Variable Aleatoria](#variable-aleatoria)
     + [VA Discreta](#va-discreta)
@@ -15,12 +15,15 @@
       - [Muestra Aleatoria con reposicion](#muestra-aleatoria-con-reposicion)
       - [Muestra Aleatoria sin reposicion](#muestra-aleatoria-sin-reposicion)
     + [Muestreo Sistematico](#muestreo-sistematico)
+    + [Muestreo Estratificado](#muestreo-estratificado)
+    + [Muestreo por conglomerados](#muestreo-por-conglomerados)
+    + [Muestreo polietapico](#muestreo-polietapico)
 - [Estadistica Multivariante](#estadistica-multivariante)
 - [Probabilidad Basica](#probabilidad-basica)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-# Estadistica Basica
+# Estadistica Descriptiva
 
 ## Muestra
 Subconjunto de algo mas grande, de una población<br />
@@ -80,6 +83,8 @@ Pasos para un estudio Inferencial:
 - Aplicar las tecnicas de inferencia elegidascon el software adecuado (Python o R)
 - Obtener conclusiones
 - Si las conclusiones son fiables y suficientes, redactar un informe; en caso contrario, volver a empezar.
+<br />
+<img src="images/7.png" />
 
 ## Muestreo
 Tendremos que distinguir entre **Poblacion** y **muestra** (subconjunto de la poblacion)<br />
@@ -140,6 +145,61 @@ elegidas = elegidas%%150
 muestra = iris[elegidas,]
 
 ```
+
+### Muestreo Estratificado
+Selecciono entre estratos, por ejemplo entre hombres y mujeres<br />
+<img src="images/4.png" /><br />
+La idea seria tomar una muestra aleatoria proporcional a cada una, en este ejemplo tomariamos 6 del primer color y 9 del segundo, siendo un total de 15
+
+
+### Muestreo por conglomerados
+Cuando el proceso de obtener y estudiar una muestra aleatoria es dificil<br />
+En este caso en lugar de extraer muestras aleatorias, escogemos primero un subconjunto al azar. Esto lo llamamos por **cluster**<br />
+Ej: en lugar de ir a diferentes personas podriamos ir a un edificio y encuestarlos ahi, seria menos costoso<br />
+<img src="images/5.png" /><br />
+En este ejemplo supongamos que son 20 edificios con 5 personas cada uno y elegimos 3 conglomerados<br />
+
+```r
+#Suponiendo que quiero medir jugadores de un mundial, y en este caso eligo 4 paises
+
+numero.paises.elegidos = sample(1:32,4,replace=FALSE) # De 32 paises elijo 4
+paises.elegidos = unique(wolrdcup$Team)[numero.paises.elegidos] # me traigo los paises
+
+# me traigo los jugadores de esos 4 paises
+muestra.worldcup = worldcup[wolrdcup$Team%in%paises.elegidos]
+```
+
+### Muestreo polietapico
+Igual que por conglomerado pero selecciono aleatoriamente dentro de cada grupo<br />
+<img src="images/6.png" /><br />
+
+```r
+#Suponiendo que quiero medir jugadores de un mundial, y en este caso eligo 4 paises
+
+numero.paises.elegidos = sample(1:32,4,replace=FALSE) # De 32 paises elijo 4
+paises.elegidos = unique(wolrdcup$Team)[numero.paises.elegidos] # me traigo los paises
+
+# Me traigo los jugadores de cada pais (de los 4)
+worldcup.pais1 = worldcup[wolrdcup$Team == paises.elegidos[1],]
+worldcup.pais2 = worldcup[wolrdcup$Team == paises.elegidos[2],]
+worldcup.pais3 = worldcup[wolrdcup$Team == paises.elegidos[3],]
+worldcup.pais4 = worldcup[wolrdcup$Team == paises.elegidos[4],]
+
+# Elijo 5 jugadores de cada pais
+jugadores.pais1 = sample(1:dim(worldcup.pais1)[1],5,replace=FALSE)
+jugadores.pais2 = sample(1:dim(worldcup.pais2)[1],5,replace=FALSE)
+jugadores.pais3 = sample(1:dim(worldcup.pais3)[1],5,replace=FALSE)
+jugadores.pais4 = sample(1:dim(worldcup.pais4)[1],5,replace=FALSE)
+
+# Juntamos la muestra
+muestra.worldcup = rbind(
+  worldcup.pais1[jugadores.pais1,],
+  worldcup.pais2[jugadores.pais2,],
+  worldcup.pais3[jugadores.pais3,],
+  worldcup.pais4[jugadores.pais4,]
+  )
+```
+
 # Estadistica Multivariante
 
 # Probabilidad Basica

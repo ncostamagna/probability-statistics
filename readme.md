@@ -18,10 +18,14 @@
     + [Muestreo Estratificado](#muestreo-estratificado)
     + [Muestreo por conglomerados](#muestreo-por-conglomerados)
     + [Muestreo polietapico](#muestreo-polietapico)
+  * [Estimacion Puntual](#estimacion-puntual)
+    + [Media muestral](#media-muestral)
+    + [Variancia y Desviacion Muestral](#variancia-y-desviacion-muestral)
 - [Estadistica Multivariante](#estadistica-multivariante)
 - [Probabilidad Basica](#probabilidad-basica)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # Estadistica Descriptiva
 
@@ -199,6 +203,53 @@ muestra.worldcup = rbind(
   worldcup.pais4[jugadores.pais4,]
   )
 ```
+
+## Estimacion Puntual
+Un **Estimador Puntual** es una funcion que aplicada a una muestra nos permite estimar un valor que queramos conocer sobre toda la poblacion<br />
+<img src="images/8.png" /><br />
+
+### Media muestral
+<img src="images/9.png" /><br />
+Si vamos tomando mas valores en la muestra el error seria menor, lo cual tiene sentido porque se iria acercando mas a la poblacion<br />
+<img src="images/10.png" /><br />
+Para este ejemplo:
+- generaremos 10000 muestras de tamaño 40
+- hallaremos los valores medios de cada muestra
+- veremos la media y desviacion tipica de dichos valores y los comprararemos con la media poblacional
+
+```r
+# replicate(n, expresion)
+#    n -> veces que queres ejecutar la expresion
+#    expresion -> lo que vamos a ejecutar
+
+valores.medios = replicate(10000, mean(
+                                sample(iris$Petal.Length, 40, replace = FALSE)
+                              ))
+
+# calcuamos el valor medio de los valores medios
+mean(valores.medios)
+
+# deberia acercarse a la esperanza o el valor medio de toda la poblacion
+mean(iris$Petal.Length)
+
+
+sd(valores.medios) # Desviacion tipica de la muestra
+sd(iris$Petal.Length/sqrt(40)) # Esos valores tienen que estar cerca de la poblacion
+```
+Nosotros vamos a querer estudiar muestras y muchas veces vamos a tener que estandarizar los valores para que sean normales<br />
+<img src="images/11.png" />
+
+### Variancia y Desviacion Muestral
+<img src="images/12.png" /><br />
+
+La tilde arriba de la **S** indica que es de la muestra<br />
+En la variancia, cuando se trata de **muestra** hay que dividir por **n - 1**<br />
+La poblacional seria:<br />
+<img src="images/13.png" /><br />
+
+**Propiedades:**<br />
+Para un ordenador es menos pesado hacerlo de esta otra forma, lo que esta entre parentesis<br />
+<img src="images/14.png" /><br />
 
 # Estadistica Multivariante
 

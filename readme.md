@@ -254,3 +254,99 @@ Para un ordenador es menos pesado hacerlo de esta otra forma, lo que esta entre 
 # Estadistica Multivariante
 
 # Probabilidad Basica
+
+# Distribuciones Discretas 
+
+## Bernulli
+X como VA que mide el numero de exitos
+
+```
+X~Be(p)
+
+1 exito
+0 fracaso
+```
+Tirar una moneda al aire y el exito seria cara, cruz fracaso<br />
+Muy pobre, solo puede tomar 1 valores: exito o fracaso<br />
+
+```r
+# P de sacar 1 es 0,7
+dbern(1, 0.7)
+```
+
+## Binomial 
+No solo exitos y fracasos, sino el numero de exitos
+
+```
+X~B(n,p)
+
+n -> numero de veces
+p -> prob de exito
+q -> prob de fracaso
+
+q = 1 - p
+```
+
+Con tomar n = 1 seria igual que **Bernulli**
+
+```r
+n = 30 # tomo 30 valores
+p = 0.6 
+N = 100000 # Poblacion total
+rbinom(N, n, p)
+
+# Cuantos de los 30 fueron exitosos
+```
+<img src="images/15.png" /><br />
+
+- En R tenemos las funciones del paquete Rlab: dbinom(x, size, prob), pbinom(q,size, prob), qbinom(p, size, prob), rbinom(n, size, prob) donde prob es la probabilidad de éxito y size el número de ensayos del experimento.
+
+- En Python tenemos las funciones del paquete scipy.stats.binom: pmf(k,n,p), cdf(k,n,p), ppf(q,n,p), rvs(n, p, size) donde p es la probabilidad de éxito y n el número de ensayos del experimento
+
+## Geometrica
+X mide numero de repeticiones hasta haber conseguido el exito
+```
+X~Ge(p)
+
+p -> probabilidad de exito
+```
+Un ejemplo seria el borracho, que intenta abrir la puerta con muchas llaves hasta que lo consigue<br />
+
+<img src="images/16.png" /><br />
+
+- En R tenemos las funciones del paquete Rlab: dgeom(x, prob), pgeom(q, prob), qgeom(p, prob), rgeom(n, prob) donde prob es la probabilidad de éxito del experimento.
+
+- En Python tenemos las funciones del paquete scipy.stats.geom: pmf(k,p), cdf(k,p), ppf(q,p), rvs(p, size) donde p es la probabilidad de éxito del experimento
+
+## Hipergeometrica
+Se extrae a la vez **n** objetos de una caja, los sacamos y no los devolvemos, donde hay **N** de tipo **A** y **M** de tipo **B**
+```
+X~H(N,M,n)
+```
+Si tenemos 20 animales, entre ellos perros y gatos, haciendo una extraccion, cual es la probabilidad de sacar una cantidad de gatos y perros
+
+```r
+dhyper(x,m,n,k)
+```
+```
+m -> n obj primer tipo
+n -> n obj segundo tipo
+k -> n extracciones
+```
+Tenemos 20 animales, 7 perros y 13 gatos. Queremos medil la probabilidad si elegimos 12 animales al azar
+```
+dhyper(x=0:12, m=7, n=13, k=12)
+
+encontrar:
+
+0 perros - 0.00010
+1 perros - 0.004
+2 perros - 0.04
+3 perros - 0.19
+```
+
+<img src="images/17.png" /><br />
+
+- En R tenemos las funciones del paquete Rlab: dhyper(x, m, n, k), phyper(q, m, n, k), qhyper(p, m, n, k), rhyper(nn, m, n, k) donde m es el número de objetos del primer tipo, n el número de objetos del segundo tipo y k el número de extracciones realizadas.
+
+- En Python tenemos las funciones del paquete scipy.stats.hypergeom: pmf(k,M, n, N), cdf(k,M, n, N), ppf(q,M, n, N), rvs(M, n, N, size) donde M es el número de objetos del primer tipo, N el número de objetos del segundo tipo y n el número de extracciones realizadas.

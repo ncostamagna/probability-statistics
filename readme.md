@@ -34,6 +34,17 @@ Subconjunto de algo mas grande, de una población<br />
 - Necesitamos una muestra aleatoria simple 
 - La muestra tiene que ser representativa de la poblacion
 
+## Metodos
+
+### Cualitativos
+Datos de investigacion de tipo texto, no tienen orden (sexo, pais)
+
+### Ordinales
+Son de tipo texto y tienen un orden, ejemplo: calificacion (Bueno, muy bueno, malo, muy malo, mas o menos)
+
+### Cuantitativos
+Son de tipo numerico y tienen un orden (peso, altura, edad)
+
 ## Variable Aleatoria
 Lo que vamos a medir, por ejemplo, de una poblacion de personas podemos medir la altura, sexo, peso, etc..<br />
 Existen 2 tipos de VA:

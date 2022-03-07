@@ -117,7 +117,7 @@ El valor real de la dispersion
 
 ### Cuartiles
 Se especifica con la Q<br />
-<img src="images/20.png" />
+<img src="images/20.png" width="70%"/>
 - Q1 debajo del 25%
 - Q2 debajo del 50%
 - Q3 debajo del 75%

@@ -96,6 +96,41 @@ Valor que mas se repite
 
 ## Medidas de Dispercion
 
+### Varianza
+<img src="images/18.png" />
+<br />
+Al cuadrado para que la suma no de numeros negativos
+
+### Desviacion tipica
+<img src="images/19.png" />
+<br />
+El valor real de la dispersion
+
+## Medidas de Posicion
+
+### Cuantiles
+
+- Cuartiles (25%, 50%, 75%)
+- Quintiles (20%,40%,60%,80%)
+- Deciles (10%,20%,30%,...,90%)
+- Perciles (1%,2%,3%,4%,5%,...,99%)
+
+### Cuartiles
+Se especifica con la Q<br />
+<img src="images/20.png" />
+- Q1 debajo del 25%
+- Q2 debajo del 50%
+- Q3 debajo del 75%
+<br />
+Ejemplo:<br />
+Datos: 2;3;5;6;7;9;10;11;13<br />
+Q3 = 3(9/4) = 6.75<br />
+el valor es 7, siempre va por el decimal de arriba, por mas que de 6.25<br />
+Seria el 7mo valor (10) <br />
+
+2;3;5;6;7;9;**10**;11;13<br />
+
+
 # Estadistica Inferencial 
 Mediante una muestra quiero poder llegar a describir lo mas certeramente posible la poblacion total.<br /><br />
 Pasos para un estudio Inferencial:

@@ -129,7 +129,8 @@ el valor es 7, siempre va por el decimal de arriba, por mas que de 6.25<br />
 Seria el 7mo valor (10) <br />
 
 2;3;5;6;7;9;**10**;11;13<br />
-<img src="images/21.png" />
+<img src="images/21.png" /><br />
+<img src="images/22.png" />
 
 # Estadistica Inferencial 
 Mediante una muestra quiero poder llegar a describir lo mas certeramente posible la poblacion total.<br /><br />

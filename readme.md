@@ -1,5 +1,9 @@
 - [Estadistica Descriptiva](#estadistica-descriptiva)
   * [Muestra](#muestra)
+  * [Metodos](#metodos)
+    + [Cualitativos](#cualitativos)
+    + [Ordinales](#ordinales)
+    + [Cuantitativos](#cuantitativos)
   * [Variable Aleatoria](#variable-aleatoria)
     + [VA Discreta](#va-discreta)
     + [VA Continua](#va-continua)
@@ -23,8 +27,14 @@
     + [Variancia y Desviacion Muestral](#variancia-y-desviacion-muestral)
 - [Estadistica Multivariante](#estadistica-multivariante)
 - [Probabilidad Basica](#probabilidad-basica)
+- [Distribuciones Discretas](#distribuciones-discretas)
+  * [Bernulli](#bernulli)
+  * [Binomial](#binomial)
+  * [Geometrica](#geometrica)
+  * [Hipergeometrica](#hipergeometrica)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # Estadistica Descriptiva
